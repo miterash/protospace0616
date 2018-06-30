@@ -1,5 +1,5 @@
 class PrototypesController < ApplicationController
-  before_action :set_prototype, only: [:show, :edit]
+  before_action :set_prototype, only: [:show, :edit, :update]
 
   def index
     @prototypes = Prototype.order("created_at DESC").page(params[:page]).per(5)
@@ -23,6 +23,14 @@ class PrototypesController < ApplicationController
   end
 
   def edit
+  end
+
+  def update
+    if @prototype.update(prototype_params)
+      redirect_to prototypes_path, notice: '編集デキタ~~~~~~~~~~~~！'
+    else
+      render :edit
+    end
   end
 
   private
