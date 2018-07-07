@@ -1,3 +1,4 @@
+$(document).on("turbolinks:load", function() {
 $(function (){
   $('#main_image_uploader').on('change',function(e) {
 //ファイルが選択されたとき
@@ -33,4 +34,5 @@ $(function (){
 //srcのURLを空にする
   }
   });
+});
 });
