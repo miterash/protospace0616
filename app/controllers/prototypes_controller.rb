@@ -1,5 +1,5 @@
 class PrototypesController < ApplicationController
-  before_action :set_prototype, only: [:show, :edit, :update]
+  before_action :set_prototype, only: [:show, :edit, :update, :destroy]
 
   def index
     @prototypes = Prototype.order("created_at DESC").page(params[:page]).per(5)
@@ -33,6 +33,11 @@ class PrototypesController < ApplicationController
     end
   end
 
+  def destroy
+    @prototype.destroy
+    redirect_to prototypes_path, notice: '削除したったあああああ！！！！'
+  end
+
   private
 
   def set_prototype
@@ -45,7 +50,7 @@ class PrototypesController < ApplicationController
       :catch_copy,
       :concept,
       :user_id,
-      captured_images_attributes: [:content, :status]
+      captured_images_attributes: [:id, :content, :status]
     )
   end
 end
