@@ -29,11 +29,6 @@ ActiveRecord::Schema.define(version: 20180630064938) do
 
   add_index "categories", ["name"], name: "index_categories_on_name", unique: true, using: :btree
 
-  create_table "protospaces", force: :cascade do |t|
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-  end
-
   create_table "prototype_categories", force: :cascade do |t|
     t.integer  "prototype_id", limit: 4
     t.integer  "category_id",  limit: 4
