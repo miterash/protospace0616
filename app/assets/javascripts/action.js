@@ -1,4 +1,5 @@
 $(document).on("turbolinks:load", function() {
+//リロードせずに読み込める
 $(function (){
   $('#main_image_uploader').on('change',function(e) {
 //ファイルが選択されたとき
