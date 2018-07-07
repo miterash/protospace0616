@@ -1,5 +1,5 @@
 class PrototypesController < ApplicationController
-  before_action :set_prototype, only: [:show, :edit, :update]
+  before_action :set_prototype, only: [:show, :edit, :update, :destroy]
 
   def index
     @prototypes = Prototype.order("created_at DESC").page(params[:page]).per(5)
@@ -31,6 +31,11 @@ class PrototypesController < ApplicationController
     else
       render :edit
     end
+  end
+
+  def destroy
+    @prototype.destroy
+    redirect_to prototypes_path, notice: '削除したったあああああ！！！！'
   end
 
   private
