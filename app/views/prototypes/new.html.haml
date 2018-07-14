@@ -25,6 +25,12 @@
                     %img
                     = image.file_field :content
                     = image.hidden_field :status, value: "sub"
+
+      .row.proto-description
+        .col-md-12
+          %h4 タグ
+          = f.text_field :prototype_categories, require: true, placeholder: "Input"
+
       .row.proto-description
         .col-md-12
           %h4 Catch Copy
