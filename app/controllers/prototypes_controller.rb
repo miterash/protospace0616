@@ -27,7 +27,7 @@ class PrototypesController < ApplicationController
 
   def update
     if @prototype.update(prototype_params)
-      redirect_to prototypes_path, notice: '編集デキタ~~~~~~~~~~~~！'
+      redirect_to prototypes_path, notice: '編集できました。'
     else
       render :edit
     end
@@ -35,7 +35,7 @@ class PrototypesController < ApplicationController
 
   def destroy
     @prototype.destroy
-    redirect_to prototypes_path, notice: '削除したったあああああ！！！！'
+    redirect_to prototypes_path, notice: ' 削除されました。。。'
   end
 
   private
