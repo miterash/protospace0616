@@ -1,12 +1,13 @@
 .col-sm-4.col-md-3.proto-content
   .dropdown
     .drop_menu_location
-      -if user_signed_in?
-        %ul
-          %li
-            = link_to 'EDIT', edit_prototype_path(prototype)
-          %li
-            = link_to 'DELETE', prototype_path(prototype), method: :delete
+      %button#dropdownMenu.btn.btn-default.dropdown-toggle{"aria-expanded" => "false", "data-toggle" => "dropdown", :type => "button"}
+        Action
+      %ul.dropdownMenu1
+        %li
+          = link_to 'EDIT', edit_prototype_path(prototype)
+        %li
+          = link_to 'DELETE', prototype_path(prototype), method: :delete
 
   .thumbnail
     = link_to image_tag(prototype.set_main_thumbnail), prototype_path(prototype)
