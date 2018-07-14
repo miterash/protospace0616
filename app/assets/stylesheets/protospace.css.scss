@@ -327,6 +327,15 @@ body {
     min-width: 50px;
     border: 1px solid #eee;
   }
+
+  ul.dropdownMenu1 {
+    list-style: none;
+    background-color: #fff;
+    padding: 5px;
+    min-width: 100px;
+    border: 1px solid #eee;
+    font-size: 12px;
+  }
 }
 
 .proto-page {
@@ -642,4 +651,3 @@ body {
   border-color: #ebccd1;
   color: #a94442;
 }
-
