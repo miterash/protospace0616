@@ -24,10 +24,16 @@ class Prototype < ActiveRecord::Base
     created_at.strftime('%b %d %a')
   end
 
+
   def save_categories(tags)
     current_tags = self.categories.pluck(:name) unless self.categories.nil?
     old_tags = current_tags - tags
     new_tags = tags - current_tags
+    # self = クラスメソッドを取得
+    # unless = 条件式が偽の場合の処理
+    # pluck = 任意のカラムの配列を取得
+    # nil? = 存在しない
+    # current = 現在の
 
     # Destroy old taggings:
     old_tags.each do |old_name|
@@ -37,7 +43,8 @@ class Prototype < ActiveRecord::Base
     # Create new taggings:
     new_tags.each do |new_name|
       article_category = Category.find_or_create_by(name:new_name)
-      self.categories << article_category
+      # find_or_create_by = 検索条件を指定して初めの1件を取得し、1件もなければ作成
+      self.categories << prototype_category
     end
   end
 

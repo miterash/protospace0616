@@ -29,7 +29,9 @@
       .row.proto-description
         .col-md-12
           %h4 タグ
-          = f.text_field :prototype_categories, require: true, placeholder: "Input"
+          .article-tags-field do |f|
+            = f.label "カテゴリー"
+              %ul#article-tags
 
       .row.proto-description
         .col-md-12
