@@ -34,8 +34,12 @@ class PrototypesController < ApplicationController
   end
 
   def destroy
-    @prototype.destroy
-    redirect_to prototypes_path, notice: ' 削除されました。。。'
+    if user_signed_in? && @prototype.user_id == current_user.id
+      @prototype.destroy
+      redirect_to prototypes_path, notice: ' 削除されました。。。'
+    else
+      redirect_to prototypes_path, notice: ' 削除できませんでした。。。'
+    end
   end
 
   private

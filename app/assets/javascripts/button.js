@@ -1,3 +1,4 @@
+$(document).on("turbolinks:load", function() {
 $(function() {
   $('.dropdown').on("click", function(){
     $(".action").show();
@@ -13,4 +14,5 @@ $(function() {
     //           `
     // $('.btn.btn-default.dropdown-toggle').append(html);
   });
+});
 });
