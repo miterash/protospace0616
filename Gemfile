@@ -18,6 +18,7 @@ gem 'carrierwave'
 gem 'rmagick'
 gem 'kaminari'
 
+
 group :development, :test do
   gem 'byebug'
 end
@@ -27,5 +28,6 @@ group :development do
   gem 'spring'
   gem "better_errors"
   gem "binding_of_caller"
+  gem 'rspec-rails'
 end
 
