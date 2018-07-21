@@ -328,13 +328,17 @@ body {
     border: 1px solid #eee;
   }
 
-  ul.dropdownMenu1 {
+  ul.dropdown {
     list-style: none;
     background-color: #fff;
     padding: 5px;
     min-width: 100px;
     border: 1px solid #eee;
     font-size: 12px;
+  }
+
+  .action {
+    display: none;
   }
 }
 
