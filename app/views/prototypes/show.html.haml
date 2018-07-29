@@ -37,3 +37,15 @@
           %a{href: "#", class: "btn btn-default"} iPad
         %li
           %a{href: "#", class: "btn btn-default"} wireframe
+
+%form#new_comment.form-inline{"accept-charset" => "UTF-8", :action => "/prototypes/185/comments", "data-remote" => "true", :method => "post"}
+  %input{:name => "utf8", :type => "hidden", :value => "✓"}/
+  %h4 Write a comment
+  .row
+    .form-group.col-md-10
+      %textarea#comment_text.textform-control{:name => "comment[text]", :placeholder => "Your comments", :rows => "3"}
+        :preserve
+
+      %input#comment_prototype_id{:name => "comment[prototype_id]", :type => "hidden", :value => "185"}/
+    .form-group.col-md-2
+      %input.btn.btn-primary{:name => "commit", :type => "submit", :value => "Comment"}/
