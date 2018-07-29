@@ -38,14 +38,24 @@
         %li
           %a{href: "#", class: "btn btn-default"} wireframe
 
-%form#new_comment.form-inline{"accept-charset" => "UTF-8", :action => "/prototypes/185/comments", "data-remote" => "true", :method => "post"}
-  %input{:name => "utf8", :type => "hidden", :value => "✓"}/
-  %h4 Write a comment
-  .row
-    .form-group.col-md-10
-      %textarea#comment_text.textform-control{:name => "comment[text]", :placeholder => "Your comments", :rows => "3"}
-        :preserve
-
-      %input#comment_prototype_id{:name => "comment[prototype_id]", :type => "hidden", :value => "185"}/
-    .form-group.col-md-2
-      %input.btn.btn-primary{:name => "commit", :type => "submit", :value => "Comment"}/
+  - if user_signed_in?
+    .comment
+      %h4.comment_write
+        Write a comment.
+      = form_for [@prototype, @comment], html: {class: "comment__post"} do |f|
+        .form-group
+          = f.text_area :content, placeholder: "write comment", class: "form-control"
+        .form-group
+          = f.submit "Submit", class: "btn btn-primary"
+      .comment__content
+        %h4.comment__footer
+          Comments
+          %span.comment__count (#{@comments.length})
+        - @comments.each do |comment|
+          .comment__body
+            %h5.user-name
+              = comment.user.name
+              %span.posted-time
+                = comment.created_at
+            %p.comment-body
+              = comment.content
