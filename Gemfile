@@ -18,6 +18,10 @@ gem 'carrierwave'
 gem 'rmagick'
 gem 'kaminari'
 
+group :production do
+  gem 'unicorn'
+end
+
 group :development, :test do
   gem 'byebug'
 end
