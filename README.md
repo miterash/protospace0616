@@ -4,7 +4,7 @@ Structure of DataBase
 ### association
 
 ```
-has_many :prototypes, likes, comments
+　has_many :prototypes, likes, comments
 ```
 
 ### table
