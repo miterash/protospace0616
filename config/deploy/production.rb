@@ -11,7 +11,7 @@ server '18.182.200.121', user: 'ec2-user', roles: %w{app db web}
 
 
 # config valid only for current version of Capistrano
-lock '<Capistranoのバージョン>'
+lock '3.11.0'
 
 set :application, 'protospace0616'
 set :repo_url,  'git@github.com:miteo/protospace0616.git'
